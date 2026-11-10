@@ -1,0 +1,5 @@
+.DS_Store
+.openai/
+dist/.vercel/
+dist/.gitignore
+dist-backup-*/

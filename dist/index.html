@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Khushi Kundoor, software engineer. Selected projects and industry experience.">
+  <title>khushi kundoor</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/three.min.js"></script>
+  <script defer src="vendor/mustang-loader.js"></script>
+  <script defer src="automotive.js"></script>
+  <script defer src="effects.js"></script>
+</head>
+<body id="top">
+  <div class="window-light" aria-hidden="true"><canvas id="reflections"></canvas></div>
+  <canvas class="cursor-trail" aria-hidden="true"></canvas>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="nav wrap">
+      <nav aria-label="Main navigation"><a href="#projects">projects</a><a href="#experience">experience</a><a href="#about">about</a></nav>
+      <a class="wordmark" href="#top">khushi kundoor</a>
+      <div class="header-actions">
+        <a class="header-link" href="mailto:kkundoor@umich.edu">CONTACT ↗</a>
+        <button class="effects-toggle" type="button" hidden>PAUSE EFFECTS</button>
+      </div>
+    </div>
+  </header>
+  <main id="content">
+    <section id="about" class="wrap intro" aria-labelledby="hello">
+      <div class="split about">
+        <div class="copy intro-copy">
+          <h1 id="hello">hi, i’m khushi</h1>
+          <p class="bio">I studied computer science at the University of Michigan and interned at Amazon and Intel. I build full-stack tools that make complex workflows easier to work through, from investigating audit trails to finding the right manufacturing data.</p>
+          <div class="links"><a class="button primary" href="#projects">SEE MY WORK ↓</a><a class="text-link" href="#contact">get in touch ↗</a></div>
+        </div>
+        <figure class="portrait"><img src="khushi-portrait.jpg" alt="Khushi Kundoor in a navy sweater outside a brick building" width="637" height="720" fetchpriority="high"></figure>
+      </div>
+    </section>
+
+    <section id="projects" class="wrap section" aria-labelledby="projects-title">
+      <div class="section-head"><p class="label">01 / PUBLIC PROJECTS</p><h2 id="projects-title">selected work</h2></div>
+      <article class="project">
+        <header class="project-header">
+          <div><p class="label">01 / PERSONAL PROJECT</p><h3 class="product-heading">place memory</h3><p class="project-deck">Find the places in screenshots and notes you saved.</p></div>
+          <div class="links"><a class="button primary" href="https://place-memory-caxs.onrender.com/">TRY THE DEMO ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory">source ↗</a></div>
+        </header>
+        <div class="project-story">
+          <figure class="project-image">
+            <img src="stow-lake-result.png" alt="Place Memory automatically identifies Blue Heron Lake and lists Stow Lake as the matching alias" width="970" height="320" loading="lazy">
+            <figcaption class="label">FIG 01 / BLUE HERON LAKE RESULT</figcaption>
+          </figure>
+          <div class="case-copy">
+            <p class="label">FIELD NOTE / SAN FRANCISCO</p><h4>one lake, two names</h4>
+            <dl class="case">
+              <div><dt>01 / THE PROBLEM</dt><dd>A screenshot said Stow Lake. The map said Blue Heron Lake. The first run needed manual confirmation.</dd></div>
+              <div><dt>02 / THE CHANGE</dt><dd>I added historical aliases to the evidence and filtered out candidates that weren’t the right kind of place.</dd></div>
+              <div><dt>03 / THE RESULT</dt><dd>The resolver identified Blue Heron Lake on the rerun and showed the alias behind the match.</dd></div>
+            </dl>
+            <a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/field-test-2026-09-17.md">read the field notes ↗</a>
+          </div>
+        </div>
+        <footer class="project-meta label"><span>REACT · TYPESCRIPT · FASTAPI · GEMINI</span><span>6 FIELD REGRESSION SCENARIOS</span></footer>
+      </article>
+    </section>
+
+    <section id="experience" class="wrap section" aria-labelledby="experience-title">
+      <div class="section-head"><p class="label">02 / INDUSTRY</p><h2 id="experience-title">experience</h2></div>
+      <div class="experience">
+        <article><p class="label">AMAZON / AUDIT TOOLING</p><h3>150 → 45 hours</h3><p class="result-label">Approximate analysis time per cycle.</p><p>I built QueryQuencher for engineers investigating contract-processing audit trails. When audit responses grew past 10 MB, I switched to filtered, incremental retrieval so engineers could start with a summary and drill down as needed.</p></article>
+        <article><p class="label">INTEL / MANUFACTURING AUTOMATION</p><h3>760 hours a year</h3><p class="result-label">Estimated time savings for the workflow.</p><p>I built an internal chatbot that linked natural-language requests to manufacturing APIs, Python scripts, and a database. I documented edge cases and test scenarios for that workflow.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap section automotive" aria-labelledby="workshop-title">
+      <div class="section-head"><p class="label">03 / INTERACTIVE STUDY</p><h2 id="workshop-title">workshop</h2></div>
+      <figure class="auto-exhibit">
+        <div class="auto-stage" id="mustang" aria-hidden="true">
+          <span class="auto-view label" id="auto-view">01 / SIDE ELEVATION</span>
+          <svg id="auto-drawing" viewBox="0 0 800 360" fill="none">
+            <defs><pattern id="auto-grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" stroke="#645348" stroke-opacity=".11"/></pattern></defs>
+            <rect x="35" y="28" width="730" height="306" fill="url(#auto-grid)"/>
+            <path class="auto-guide" d="M88 180H712M400 55V305"/>
+          </svg>
+          <canvas id="auto-model" hidden></canvas>
+          <div class="auto-test-overlay" hidden><span>TEST MATRIX</span><span>EXPECTED · EDGE · RECOVERY</span></div>
+          <p id="auto-loading">Loading the 2024 Mustang GT3 study…</p>
+        </div>
+        <figcaption class="auto-caption">
+          <div><p class="label" id="auto-index">01 / DEFINE</p><h3 id="auto-title">scope the problem</h3><p id="auto-copy">Identify the user need, constraints, and what success looks like.</p></div>
+        </figcaption>
+        <div class="auto-steps" role="group" aria-label="Development stages" hidden>
+          <button type="button" aria-pressed="true">01 Define</button><button type="button" aria-pressed="false">02 Design</button><button type="button" aria-pressed="false">03 Build</button><button type="button" aria-pressed="false">04 Validate</button><button type="button" aria-pressed="false">05 Release</button>
+        </div>
+      </figure>
+      <p class="auto-note"><span class="label">FUN FACT</span> I drive a black Mustang. The maize-and-blue plate is a little nod to my time at Michigan.</p>
+      <p class="auto-credit">2024 Mustang GT3 model by <a href="https://sketchfab.com/models/d2b7823f48f147e99e857ee825d089cc/embed">kevin (ケビン)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · paint and plate adapted</p>
+    </section>
+    <section class="wrap section toolkit" aria-labelledby="toolkit-title">
+      <div class="section-head"><p class="label">04 / TOOLS IN USE</p><h2 id="toolkit-title">the stack</h2></div>
+      <div class="stack-viewport"><div class="stack-track"><ul class="stack-list"><li>Python</li><li>TypeScript</li><li>SQL</li><li>React</li><li>FastAPI</li><li>SQLite</li><li>Docker</li><li>GitHub Actions</li><li>AWS</li><li>Model Context Protocol</li><li>Gemini API</li></ul><ul class="stack-list stack-repeat" aria-hidden="true"><li>Python</li><li>TypeScript</li><li>SQL</li><li>React</li><li>FastAPI</li><li>SQLite</li><li>Docker</li><li>GitHub Actions</li><li>AWS</li><li>Model Context Protocol</li><li>Gemini API</li></ul></div></div>
+    </section>
+  </main>
+  <footer id="contact" class="contact">
+    <div class="wrap"><p class="label">CONTACT</p><h2>say hello</h2><a class="button primary" href="mailto:kkundoor@umich.edu">EMAIL ME ↗</a><a class="text-link" href="https://github.com/kkundoor">github ↗</a></div>
+  </footer>
+</body>
+</html>
