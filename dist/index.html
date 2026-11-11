@@ -68,92 +68,57 @@
     </section>
 
     <section id="projects" class="wrap section" aria-labelledby="projects-title">
-      <div class="section-head"><p class="label">02 / PERSONAL &amp; TECHNICAL PROJECTS</p><h2 id="projects-title">projects</h2></div>
+      <div class="section-head"><p class="label">02 / SELECTED PROJECTS</p><h2 id="projects-title">projects</h2></div>
       <article class="project">
         <header class="project-header">
-          <div><p class="label">01 / FULL-STACK APPLICATION</p><h3 class="product-heading">place memory</h3><p class="project-deck">Find the real places in screenshots and notes you saved.</p></div>
+          <div><p class="label">01 / FULL-STACK APPLICATION</p><h3 class="product-heading">place memory</h3><p class="project-deck">Turn saved screenshots and notes into identifiable places.</p></div>
           <div class="links"><a class="button primary" href="https://place-memory-caxs.onrender.com/">TRY THE DEMO ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory">source ↗</a></div>
         </header>
         <div class="project-story">
           <figure class="project-image">
-            <img src="stow-lake-result.png" alt="Place Memory automatically identifies Blue Heron Lake and lists Stow Lake as the matching alias" width="970" height="320" loading="lazy">
-            <figcaption class="label">FIG 01 / BLUE HERON LAKE RESULT</figcaption>
+            <img src="stow-lake-result.png" alt="Place Memory identifies Blue Heron Lake using its historical Stow Lake name" width="970" height="320" loading="lazy">
+            <figcaption class="label">FIG 01 / BLUE HERON LAKE</figcaption>
           </figure>
           <div class="case-copy">
-            <p class="label">FIELD NOTE / SAN FRANCISCO</p><h4>one lake, two names</h4>
-            <dl class="case">
-              <div><dt>01 / THE PROBLEM</dt><dd>A screenshot said Stow Lake. The map said Blue Heron Lake. The first run needed manual confirmation.</dd></div>
-              <div><dt>02 / THE CHANGE</dt><dd>I added historical aliases to the evidence and filtered out candidates that weren’t the right kind of place.</dd></div>
-              <div><dt>03 / THE RESULT</dt><dd>The resolver identified Blue Heron Lake on the rerun and showed the alias behind the match.</dd></div>
-            </dl>
-            <a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/field-test-2026-09-17.md">read the field notes ↗</a>
+            <p class="label">DESIGN DECISION</p><h4>one lake, two names</h4>
+            <p>A renamed lake exposed a matching failure. I added historical aliases, category filtering, and confidence checks so the system can resolve a place—or ask for review instead of guessing.</p>
+            <p class="project-iteration"><strong>Iteration:</strong> Field test → resolver fix → regression tests → provider fallback.</p>
+            <a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/architecture.md">architecture &amp; evaluation ↗</a>
           </div>
         </div>
-        <div class="project-detail">
-          <p class="label">ARCHITECTURE &amp; ENGINEERING DECISIONS</p>
-          <p>React/TypeScript UI → FastAPI API → Gemini multimodal clue extraction → Photon/OSM place search with Nominatim fallback → normalized candidate scoring and confidence checks → SQLite persistence. The public demo runs on Render.</p>
-          <p>The model supplies evidence, not a final place identity. Deterministic ranking, category filtering, source provenance, and a review/abstain path make incorrect automatic matches less likely. I split extraction, provider recall, and resolver accuracy into separate testable concerns; field failures informed alias support, retrieval fallback, and regression checks in CI.</p>
-          <p class="technical-note"><strong>Design tradeoff:</strong> This is tool-grounded retrieval, not embedding-based RAG. I kept SQLite and avoided Redis because the current traffic and latency haven't justified distributed caching. Evaluation prioritizes false automatic resolutions over simply maximizing coverage.</p>
-          <div class="process-flow">
-            <p class="label">SDLC / FIELD-DRIVEN LOOPS</p>
-            <p class="process-steps">Define saved-place workflow → build UI/API/DB path → integrate Gemini and place providers → evaluate real artifacts → refine resolver and candidate retrieval → regression-test in CI → deploy and observe</p>
-            <p class="process-loop">↺ Generic notes led to an abstain rule; duplicate places led to deduplication; Stow Lake led to historical-name support and tighter alias parsing; upstream search failures led back to provider failover. Each loop changed the retrieval or decision boundary before returning to field tests.</p>
-          </div>
-          <div class="detail-links"><a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/architecture.md">architecture ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/decisions.md">design decisions ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory#evaluations">evaluations ↗</a></div>
-        </div>
-        <footer class="project-meta label"><span>REACT · TYPESCRIPT · FASTAPI · GEMINI · SQLITE</span><span>PYTEST · GITHUB ACTIONS · RENDER</span></footer>
+        <footer class="project-meta label"><span>REACT · TYPESCRIPT · FASTAPI · GEMINI</span><span>SQLITE · PYTEST · RENDER</span></footer>
       </article>
 
       <article class="project project-secondary">
         <header class="project-header">
-          <div><p class="label">02 / DATA ENGINEERING &amp; ANALYTICS</p><h3 class="product-heading">immune cell population analysis</h3><p class="project-deck">Reproducible clinical-trial cohort analysis, from validated cell counts to an interactive dashboard.</p></div>
+          <div><p class="label">02 / DATA ENGINEERING &amp; ANALYTICS</p><h3 class="product-heading">immune cell population analysis</h3><p class="project-deck">From clinical-trial cell counts to an interactive analysis dashboard.</p></div>
           <div class="links"><a class="button primary" href="https://teiko-immune-cell-dashboard.streamlit.app/">OPEN DASHBOARD ↗</a><a class="text-link" href="https://github.com/kkundoor/immune-cell-analysis-dashboard">source ↗</a></div>
         </header>
         <div class="project-story">
           <figure class="project-image">
-            <img src="https://raw.githubusercontent.com/kkundoor/immune-cell-analysis-dashboard/main/demo.png" alt="Streamlit dashboard showing relative frequencies of five immune-cell populations for a selected sample" width="1623" height="896" loading="lazy">
-            <figcaption class="label">FIG 02 / INTERACTIVE SAMPLE FREQUENCIES</figcaption>
+            <img src="https://raw.githubusercontent.com/kkundoor/immune-cell-analysis-dashboard/main/demo.png" alt="Immune Cell Population Analysis dashboard with interactive relative-frequency chart" width="1623" height="896" loading="lazy">
+            <figcaption class="label">FIG 02 / CELL FREQUENCIES</figcaption>
           </figure>
           <div class="case-copy">
-            <p class="label">ENGINEERING NOTE / COHORT ANALYSIS</p><h4>from cell counts to defensible comparisons</h4>
-            <dl class="case">
-              <div><dt>01 / THE PROBLEM</dt><dd>Raw CSV rows describe multiple cell populations, samples, and subjects. Comparing response groups directly at the row level risks inconsistent counts and repeated-sample bias.</dd></div>
-              <div><dt>02 / THE DESIGN</dt><dd>Validate the input, normalize subject/sample/count relationships in SQLite, compute per-sample percentages, then aggregate repeated samples to the subject level before cohort statistics.</dd></div>
-              <div><dt>03 / THE RESULT</dt><dd>A three-tab Streamlit dashboard exposes sample frequencies, responder comparisons, and baseline subsets. In the supplied data, no population passed the adjusted FDR 0.05 threshold; the interface reports the tests without overstating significance.</dd></div>
-            </dl>
-            <a class="text-link" href="https://github.com/kkundoor/immune-cell-analysis-dashboard#what-the-pipeline-does">read the methodology ↗</a>
+            <p class="label">DESIGN DECISION</p><h4>compare patients, not rows</h4>
+            <p>Built a validated CSV → SQLite → Streamlit pipeline. I aggregated repeated samples by subject before responder comparisons, then applied statistical tests with multiple-comparison correction.</p>
+            <p class="project-iteration"><strong>Iteration:</strong> Validate input → model data → check queries and statistics → verify dashboard.</p>
+            <a class="text-link" href="https://github.com/kkundoor/immune-cell-analysis-dashboard">methodology &amp; tests ↗</a>
           </div>
         </div>
-        <div class="project-detail">
-          <p class="label">ARCHITECTURE &amp; ENGINEERING DECISIONS</p>
-          <p>Supplied CSV → Python schema and consistency checks → SQLite subjects/samples/cell_counts tables → SQL frequencies and cohort queries → SciPy tests (Mann–Whitney U; Benjamini–Hochberg correction) → Streamlit/Plotly UI. The loaded dataset includes 3,500 subjects, 10,500 samples, and 52,500 count records.</p>
-          <p>Subject-level aggregation prevents repeated samples from being treated as independent participants. Input validation checks duplicate sample IDs, metadata consistency, and nonnegative integer counts. The repository documents a 27-test suite covering loading and analysis.</p>
-          <div class="process-flow">
-            <p class="label">SDLC / DATA-VALIDATION LOOPS</p>
-            <p class="process-steps">Translate analytical questions → define CSV contract and relational schema → implement loader → derive SQL metrics → add cohort tests → present results in dashboard → verify calculations and edge cases</p>
-            <p class="process-loop">↺ Validation failures return to the input contract or loader, not to charts. Cohort-filter or repeated-sample discrepancies return to SQL and aggregation before statistical interpretation. Dashboard checks then loop back to the query and explanatory text to keep numbers auditable.</p>
-          </div>
-          <div class="detail-links"><a class="text-link" href="https://github.com/kkundoor/immune-cell-analysis-dashboard/blob/main/schema.sql">schema ↗</a><a class="text-link" href="https://github.com/kkundoor/immune-cell-analysis-dashboard/blob/main/analysis.py">analysis ↗</a><a class="text-link" href="https://github.com/kkundoor/immune-cell-analysis-dashboard/tree/main/tests">tests ↗</a></div>
-        </div>
-        <footer class="project-meta label"><span>PYTHON · SQL · SQLITE · SCIPY · PANDAS</span><span>STREAMLIT · PLOTLY · TESTING</span></footer>
+        <footer class="project-meta label"><span>PYTHON · SQL · SCIPY · PANDAS</span><span>STREAMLIT · PLOTLY</span></footer>
       </article>
 
       <article class="project project-secondary project-egym">
         <header class="project-header">
-          <div><p class="label">03 / ACCESSIBILITY-FOCUSED MOBILE APP</p><h3 class="product-heading">eGym</h3><p class="project-deck">Making exercise routines more approachable across different mobility levels and equipment constraints.</p></div>
+          <div><p class="label">03 / ACCESSIBLE MOBILE EXPERIENCE</p><h3 class="product-heading">eGym</h3><p class="project-deck">Exercise planning built around different mobility levels—not one default user.</p></div>
           <div class="links"><a class="text-link" href="https://github.com/kkundoor/eGym">source ↗</a></div>
         </header>
-        <div class="project-detail">
-          <p class="label">ACCESSIBLE INTERACTION DESIGN &amp; USER-FLOW TESTING</p>
-          <p>Designed onboarding around what users can do <em>today</em>: seated, limited, or full mobility; available time; equipment; and goals. The rule-based exercise picker uses those constraints instead of assuming one standard workout fits everyone.</p>
-          <p>Added spoken exercise instructions, clearly labeled previous/read/next controls, session progress, and post-routine ratings. The local Expo prototype supports manual walkthroughs of onboarding → questionnaire → routine → feedback → saved session, including checking that changed answers produce different exercise selections.</p>
-          <div class="process-flow">
-            <p class="label">SDLC / ACCESSIBILITY &amp; TESTING LOOPS</p>
-            <p class="process-steps">Identify mobility barriers → map accessible user journeys → prototype questionnaire and exercise picker → test navigation and routine variations → refine interaction flow</p>
-            <p class="process-loop">↺ Changing mobility, equipment, and time feeds back into the picker; repeating the end-to-end flow checks whether instructions, navigation, voice guidance, and saved sessions remain coherent. The repository supports manual flow testing, but does not document a formal participant usability study or measured accessibility score.</p>
-          </div>
+        <div class="project-compact">
+          <p><strong>Accessibility first.</strong> Designed a mobility-aware questionnaire, rule-based routines, spoken instructions, and clear navigation. The prototype supports testing the flow from onboarding through workout feedback and locally saved sessions.</p>
+          <p class="project-iteration"><strong>Iteration:</strong> Map user needs → prototype accessible flows → check routine variations and navigation → refine.</p>
         </div>
-        <footer class="project-meta label"><span>REACT NATIVE · EXPO · JAVASCRIPT</span><span>ACCESSIBLE UX · VOICE GUIDANCE · LOCAL FEEDBACK</span></footer>
+        <footer class="project-meta label"><span>REACT NATIVE · EXPO · JAVASCRIPT</span><span>ACCESSIBLE UX · VOICE GUIDANCE</span></footer>
       </article>
     </section>
 
