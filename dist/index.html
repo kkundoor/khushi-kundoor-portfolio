@@ -56,7 +56,7 @@
           <p class="label">INTEL / SOFTWARE ENGINEERING INTERN</p>
           <h3>760 hours / year</h3>
           <p class="result-label">Estimated savings from a natural-language data-access workflow.</p>
-          <p>Developed Python chatbot and data-access tooling for manufacturing engineers, plus automation associated with ~15% efficiency gains. Also contributed to LLM evaluation with Microsoft Prompt Flow and computer-vision annotation for a robot-inspection initiative targeting $6.9M in five-year savings.</p>
+          <p>Developed Python chatbot and data-access tooling for manufacturing engineers, plus automation associated with ~15% efficiency gains. Also built a Python web interface for prompt and model evaluation with Microsoft Prompt Flow and contributed to computer-vision annotation for a robot-inspection initiative targeting $6.9M in five-year savings.</p>
           <p class="technical-note"><strong>Focus:</strong> Python · SQL/APIs · automation · LLM evaluation · computer vision</p>
           <div class="process-flow">
             <p class="label">SDLC / MULTIPLE WORKSTREAMS</p>
@@ -81,6 +81,7 @@
           </figure>
           <div class="case-copy">
             <p class="label">DESIGN DECISION</p><h4>one lake, two names</h4>
+            <p>The React and TypeScript UI sends notes and screenshots to a FastAPI service on Render. Gemini extracts clues, place providers return candidates, and the resolver ranks them using explicit confidence checks. The local app saves confirmed places in SQLite.</p>
             <p>A renamed lake exposed a matching failure. I added historical aliases, category filtering, and confidence checks so the system can resolve a place—or ask for review instead of guessing.</p>
             <p class="project-iteration"><strong>Iteration:</strong> Field test → resolver fix → regression tests → provider fallback.</p>
             <a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/architecture.md">architecture &amp; evaluation ↗</a>
@@ -109,13 +110,13 @@
         <footer class="project-meta label"><span>PYTHON · SQL · SCIPY · PANDAS</span><span>STREAMLIT · PLOTLY</span></footer>
       </article>
 
-      <article class="project project-secondary project-egym">
+      <article id="egym" class="project project-secondary project-egym">
         <header class="project-header">
-          <div><p class="label">03 / ACCESSIBLE MOBILE EXPERIENCE</p><h3 class="product-heading">eGym</h3><p class="project-deck">Exercise planning built around different mobility levels—not one default user.</p></div>
-          <div class="links"><a class="text-link" href="https://github.com/kkundoor/eGym">source ↗</a></div>
+          <div><p class="label">03 / ACCESSIBLE MOBILE EXPERIENCE</p><h3 class="product-heading">eGym</h3><p class="project-deck">Exercise planning tailored to different mobility levels.</p></div>
+          <div class="links"><span class="label">SOURCE REPOSITORY PRIVATE</span></div>
         </header>
         <div class="project-compact">
-          <p><strong>Accessibility first.</strong> Designed a mobility-aware questionnaire, rule-based routines, spoken instructions, and clear navigation. The prototype supports testing the flow from onboarding through workout feedback and locally saved sessions.</p>
+          <p><strong>Accessibility first.</strong> Designed a mobility-aware questionnaire, rule-based routines, spoken instructions, and clear navigation. The Expo/React Native prototype uses a mock sign-in and stores workout sessions on-device with AsyncStorage.</p>
           <p class="project-iteration"><strong>Iteration:</strong> Map user needs → prototype accessible flows → check routine variations and navigation → refine.</p>
         </div>
         <footer class="project-meta label"><span>REACT NATIVE · EXPO · JAVASCRIPT</span><span>ACCESSIBLE UX · VOICE GUIDANCE</span></footer>
