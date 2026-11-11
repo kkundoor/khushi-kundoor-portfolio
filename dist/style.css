@@ -236,3 +236,11 @@ body[data-effects=paused] .stack-repeat{display:none}
 .project-secondary .project-story .project-image{background:#111923}
 .project-secondary .project-story .project-image img{object-fit:contain}
 @media(max-width:740px){.process-flow{padding:14px}.process-flow .process-steps{font-size:.86rem}.process-flow .process-loop{font-size:.82rem}}
+
+/* Concise project portfolio cards */
+.case-copy>p:not(.label){max-width:49ch;margin:12px 0;line-height:1.65}
+.case-copy .project-iteration,.project-compact .project-iteration{font-size:.85rem;color:var(--sage-ink);border-top:1px solid var(--line);padding-top:12px}
+.case-copy>a.text-link{display:inline-block;margin-top:8px}
+.project-compact{padding:clamp(18px,3vw,38px);border-top:1px solid var(--line)}
+.project-compact>p{max-width:77ch}
+.project-compact>p+p{margin-top:14px}
