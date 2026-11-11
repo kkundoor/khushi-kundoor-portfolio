@@ -225,3 +225,14 @@ body[data-effects=paused] .stack-repeat{display:none}
 .detail-links{display:flex;gap:14px 22px;flex-wrap:wrap;margin-top:18px}
 .project-secondary .product-heading{font-size:clamp(1.65rem,3.8vw,3.3rem)}
 @media(max-width:740px){.project+.project{margin-top:18px}.project-detail{padding:20px}.experience article p:not(.label):not(.result-label){margin-top:11px}}
+
+/* Project case-study and lifecycle details */
+.project-egym .product-heading{text-transform:none}
+.process-flow{margin-top:22px;padding:18px 20px;background:#eef1eaff;border:1px solid var(--line)}
+.process-flow .label{color:var(--sage-ink)}
+.process-flow .process-steps{font-size:.96rem;font-weight:700;line-height:1.7;max-width:90ch;margin-top:11px}
+.process-flow .process-loop{margin-top:10px;font-size:.9rem;max-width:90ch}
+.experience .process-flow{background:#f4f5f1}
+.project-secondary .project-story .project-image{background:#111923}
+.project-secondary .project-story .project-image img{object-fit:contain}
+@media(max-width:740px){.process-flow{padding:14px}.process-flow .process-steps{font-size:.86rem}.process-flow .process-loop{font-size:.82rem}}
