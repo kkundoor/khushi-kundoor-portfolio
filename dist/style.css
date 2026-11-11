@@ -214,3 +214,14 @@ body[data-effects=paused] .stack-repeat{display:none}
 #auto-loading{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;color:var(--sage-ink);font-size:.84rem}
 
 .auto-test-overlay{position:absolute;inset:13% 9% 17%;pointer-events:none;color:#cadbd0;display:flex;align-items:end;justify-content:space-between;gap:8px;padding:10px;font:600 clamp(.48rem,1vw,.68rem) system-ui;letter-spacing:.12em;background:linear-gradient(#a6c4b326,#a6c4b326) center/1px 100% no-repeat,linear-gradient(90deg,#a6c4b326,#a6c4b326) center/100% 1px no-repeat;border:1px dashed #a6c4b355}
+
+/* Content-only portfolio expansion: preserve established editorial layout. */
+.experience article p:not(.label):not(.result-label){max-width:64ch;margin-top:13px}
+.experience .technical-note{font-size:.88rem;line-height:1.6;color:var(--sage-ink);border-top:1px solid var(--line);padding-top:13px}
+.project+.project{margin-top:28px}
+.project-detail{padding:clamp(18px,3vw,38px);border-top:1px solid var(--line);max-width:100%}
+.project-detail>p:not(.label){max-width:92ch;margin-top:13px}
+.project-detail .technical-note{color:var(--sage-ink);background:#e7ebe365;padding:13px 16px;border-left:3px solid var(--sage-ink)}
+.detail-links{display:flex;gap:14px 22px;flex-wrap:wrap;margin-top:18px}
+.project-secondary .product-heading{font-size:clamp(1.65rem,3.8vw,3.3rem)}
+@media(max-width:740px){.project+.project{margin-top:18px}.project-detail{padding:20px}.experience article p:not(.label):not(.result-label){margin-top:11px}}
