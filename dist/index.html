@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Khushi Kundoor, software engineer. Selected projects and industry experience.">
+  <meta name="description" content="Khushi Kundoor, software engineer. Software engineering experience, full-stack projects, and technical case studies.">
   <title>khushi kundoor</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="vendor/three.min.js"></script>
@@ -17,7 +17,7 @@
   <a class="skip" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="nav wrap">
-      <nav aria-label="Main navigation"><a href="#projects">projects</a><a href="#experience">experience</a><a href="#about">about</a></nav>
+      <nav aria-label="Main navigation"><a href="#experience">experience</a><a href="#projects">projects</a><a href="#about">about</a></nav>
       <a class="wordmark" href="#top">khushi kundoor</a>
       <div class="header-actions">
         <a class="header-link" href="mailto:kkundoor@umich.edu">CONTACT ↗</a>
@@ -30,18 +30,40 @@
       <div class="split about">
         <div class="copy intro-copy">
           <h1 id="hello">hi, i’m khushi</h1>
-          <p class="bio">I studied computer science at the University of Michigan and interned at Amazon and Intel. I build full-stack tools that make complex workflows easier to work through, from investigating audit trails to finding the right manufacturing data.</p>
-          <div class="links"><a class="button primary" href="#projects">SEE MY WORK ↓</a><a class="text-link" href="#contact">get in touch ↗</a></div>
+          <p class="bio">I studied computer science at the University of Michigan and worked on AI-enabled engineering systems at Amazon and Intel. I like building useful tools—and thinking carefully about the data, context, and decisions behind them.</p>
+          <div class="links"><a class="button primary" href="#experience">EXPLORE MY WORK ↓</a><a class="text-link" href="#contact">get in touch ↗</a></div>
         </div>
         <figure class="portrait"><img src="khushi-portrait.jpg" alt="Khushi Kundoor in a navy sweater outside a brick building" width="637" height="720" fetchpriority="high"></figure>
       </div>
     </section>
 
+    <section id="experience" class="wrap section" aria-labelledby="experience-title">
+      <div class="section-head"><p class="label">01 / INDUSTRY EXPERIENCE</p><h2 id="experience-title">work experience</h2></div>
+      <div class="experience">
+        <article>
+          <p class="label">AMAZON / SOFTWARE DEVELOPMENT ENGINEER INTERN</p>
+          <h3>150 → 45 hours</h3>
+          <p class="result-label">~70% reduction in representative investigation time.</p>
+          <p>For QueryQuencher, I built a TypeScript/AWS investigation workflow connecting an AI assistant to internal services through Model Context Protocol (MCP). Engineers previously had to trace information across 20+ tools and services; the workflow served a process with 300+ monthly users.</p>
+          <p>Audit responses ranged from ~100 KB to more than 10 MB. Loading full payloads into a model context or memory wasn't scalable, so I redesigned the retrieval flow around summary-first filtering, incremental processing, and deeper tool calls only when justified by the question. I worked through implementation, review, instrumentation, and validation as the design evolved.</p>
+          <p class="technical-note"><strong>What I worked on:</strong> context engineering · MCP tool boundaries · TypeScript · AWS · service integration · performance and failure handling</p>
+        </article>
+        <article>
+          <p class="label">INTEL / SOFTWARE ENGINEERING INTERN</p>
+          <h3>760 hours / year</h3>
+          <p class="result-label">Estimated savings from a natural-language engineering workflow.</p>
+          <p>Built an internal Python chatbot/service connecting natural-language requests to engineering data and APIs, reducing the effort of finding information across manufacturing systems. Separately developed Python automation and data-access tooling associated with roughly 15% efficiency gains.</p>
+          <p>I also worked on prompt/model evaluation using Microsoft Prompt Flow and computer-vision annotation for a Boston Dynamics robot inspection effort. The broader robotics initiative carried an estimated $6.9M five-year savings opportunity.</p>
+          <p class="technical-note"><strong>What I worked on:</strong> Python · SQL and data access · API integration · LLM evaluation · automation · computer vision</p>
+        </article>
+      </div>
+    </section>
+
     <section id="projects" class="wrap section" aria-labelledby="projects-title">
-      <div class="section-head"><p class="label">01 / PUBLIC PROJECTS</p><h2 id="projects-title">selected work</h2></div>
+      <div class="section-head"><p class="label">02 / PERSONAL &amp; TECHNICAL PROJECTS</p><h2 id="projects-title">projects</h2></div>
       <article class="project">
         <header class="project-header">
-          <div><p class="label">01 / PERSONAL PROJECT</p><h3 class="product-heading">place memory</h3><p class="project-deck">Find the places in screenshots and notes you saved.</p></div>
+          <div><p class="label">01 / FULL-STACK APPLICATION</p><h3 class="product-heading">place memory</h3><p class="project-deck">Find the real places in screenshots and notes you saved.</p></div>
           <div class="links"><a class="button primary" href="https://place-memory-caxs.onrender.com/">TRY THE DEMO ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory">source ↗</a></div>
         </header>
         <div class="project-story">
@@ -59,16 +81,40 @@
             <a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/field-test-2026-09-17.md">read the field notes ↗</a>
           </div>
         </div>
-        <footer class="project-meta label"><span>REACT · TYPESCRIPT · FASTAPI · GEMINI</span><span>6 FIELD REGRESSION SCENARIOS</span></footer>
+        <div class="project-detail">
+          <p class="label">ARCHITECTURE &amp; ENGINEERING DECISIONS</p>
+          <p>React/TypeScript UI → FastAPI API → Gemini multimodal clue extraction → Photon/OSM place search with Nominatim fallback → normalized candidate scoring and confidence checks → SQLite persistence. The public demo runs on Render.</p>
+          <p>The model supplies evidence, not a final place identity. Deterministic ranking, category filtering, source provenance, and a review/abstain path make incorrect automatic matches less likely. I split extraction, provider recall, and resolver accuracy into separate testable concerns; field failures informed alias support, retrieval fallback, and regression checks in CI.</p>
+          <p class="technical-note"><strong>Design tradeoff:</strong> This is tool-grounded retrieval, not embedding-based RAG. I kept SQLite and avoided Redis because the current traffic and latency haven't justified distributed caching. Evaluation prioritizes false automatic resolutions over simply maximizing coverage.</p>
+          <div class="detail-links"><a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/architecture.md">architecture ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory/blob/main/docs/decisions.md">design decisions ↗</a><a class="text-link" href="https://github.com/kkundoor/place-memory#evaluations">evaluations ↗</a></div>
+        </div>
+        <footer class="project-meta label"><span>REACT · TYPESCRIPT · FASTAPI · GEMINI · SQLITE</span><span>PYTEST · GITHUB ACTIONS · RENDER</span></footer>
       </article>
-    </section>
 
-    <section id="experience" class="wrap section" aria-labelledby="experience-title">
-      <div class="section-head"><p class="label">02 / INDUSTRY</p><h2 id="experience-title">experience</h2></div>
-      <div class="experience">
-        <article><p class="label">AMAZON / AUDIT TOOLING</p><h3>150 → 45 hours</h3><p class="result-label">Approximate analysis time per cycle.</p><p>I built QueryQuencher for engineers investigating contract-processing audit trails. When audit responses grew past 10 MB, I switched to filtered, incremental retrieval so engineers could start with a summary and drill down as needed.</p></article>
-        <article><p class="label">INTEL / MANUFACTURING AUTOMATION</p><h3>760 hours a year</h3><p class="result-label">Estimated time savings for the workflow.</p><p>I built an internal chatbot that linked natural-language requests to manufacturing APIs, Python scripts, and a database. I documented edge cases and test scenarios for that workflow.</p></article>
-      </div>
+      <article class="project project-secondary">
+        <header class="project-header">
+          <div><p class="label">02 / DATA ENGINEERING &amp; ANALYTICS</p><h3 class="product-heading">immune cell population analysis</h3><p class="project-deck">Reproducible clinical-trial cohort analysis, from validated data to an interactive dashboard.</p></div>
+          <div class="links"><a class="button primary" href="https://teiko-immune-cell-dashboard.streamlit.app/">OPEN DASHBOARD ↗</a><a class="text-link" href="https://github.com/kkundoor/teiko-technical">source ↗</a></div>
+        </header>
+        <div class="project-detail">
+          <p class="label">DATA MODEL &amp; VALIDATION</p>
+          <p>Python ingestion validates CSV inputs and models subjects, samples, and cell counts in normalized SQLite tables. SQL computes population frequencies; the analysis aggregates repeated samples at the subject level before comparing responder and non-responder cohorts with Mann–Whitney U tests and Benjamini–Hochberg correction.</p>
+          <p>A Streamlit/Plotly interface makes cohort selection, summary statistics, and underlying observations inspectable. Test coverage protects the data contract and key calculations—an example of treating an analytical dashboard as a complete data product rather than a chart-only prototype.</p>
+        </div>
+        <footer class="project-meta label"><span>PYTHON · SQL · SQLITE · SCIPY · PANDAS</span><span>STREAMLIT · PLOTLY · TESTING</span></footer>
+      </article>
+
+      <article class="project project-secondary">
+        <header class="project-header">
+          <div><p class="label">03 / MOBILE APPLICATION</p><h3 class="product-heading">egym</h3><p class="project-deck">Inclusive exercise planning around mobility, goals, equipment, and available time.</p></div>
+          <div class="links"><a class="text-link" href="https://khushi-kundoor.vercel.app/">portfolio ↗</a></div>
+        </header>
+        <div class="project-detail">
+          <p class="label">PRODUCT LOGIC &amp; ACCESSIBILITY</p>
+          <p>Built a React Native/Expo prototype with onboarding and a questionnaire that selects exercises using explicit rules and user constraints. The application includes guided exercise flows and local session history. The important design choice was transparent, testable personalization rather than describing a rule-based system as AI-generated workouts.</p>
+        </div>
+        <footer class="project-meta label"><span>REACT NATIVE · EXPO · JAVASCRIPT</span><span>RULE-BASED PERSONALIZATION · ASYNCSTORAGE</span></footer>
+      </article>
     </section>
 
     <section class="wrap section automotive" aria-labelledby="workshop-title">
